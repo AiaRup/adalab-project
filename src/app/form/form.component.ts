@@ -19,10 +19,9 @@ export class FormComponent implements OnInit {
   twitterValue: string;
   githubValue: string;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   handleSubmit() {
     this.data = {
@@ -30,11 +29,10 @@ export class FormComponent implements OnInit {
       job: this.jobValue,
       email: this.emailValue,
       phone: this.phoneValue,
-      twitterValue: this.twitterValue,
-      githubValue: this.githubValue
-    }
-    
-    /* event emitter */
+      twitter: this.twitterValue,
+      github: this.githubValue
+    };
 
+    this.sendData.emit(this.data);
   }
 }
